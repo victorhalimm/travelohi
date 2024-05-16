@@ -1,0 +1,66 @@
+@import '../../index.scss';
+
+.dropdown {
+    position: relative;
+    font-family: inherit;
+    width: auto;
+
+    cursor: pointer;
+  
+    .dropdownHeader {
+      padding: map-get($spacings, 10);
+      background-color: map-get($colors, "white");
+      border: thin-border;
+      display: flex;
+      gap:  map-get($spacings, 5);
+      align-items: center;
+      justify-content: space-between;
+      border-radius: map-get($spacings, 5);
+  
+      &:hover {
+        background-color: map-get(map-get($colors, "gray"), "200");
+      }
+  
+      img {
+        width: 20px;
+        height: auto;
+        margin-right: map-get($spacings, 10);
+      }
+  
+      span {
+        margin-left: map-get($spacings, 10);
+      }
+    }
+  
+    .dropdownList {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: map-get($zIndices, '10');
+      width: 100%;
+      background-color: map-get($colors, "white");
+      border: thin-border;
+      border-top: none;
+      border-radius: 0 0 map-get($spacings, 5) map-get($spacings, 5);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      .dropdownElement {
+        padding: map-get($spacings, 10);
+        display: flex;
+        gap:  map-get($spacings, 5);
+        &:hover {
+          background-color: map-get(map-get($colors, "gray"), "300");
+        }
+        cursor: pointer;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+      }
+    }
+
+  }

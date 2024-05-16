@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6px + 0.5vh);
+    width: 80%;
+    background-color: white;
+    padding: calc(6px + 0.8vw);
+}
+
+.inputField {
+    width: 50%;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: calc(0.1vw + 2px);
+}

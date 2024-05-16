@@ -1,0 +1,57 @@
+@import '../../index.scss';
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.circleButton {
+  font-size: 1.5em;
+  color: map-get($colors, "blue", "500");
+  cursor: pointer;
+
+  &:hover {
+    color: darken(map-get($colors, "blue", "500"), 10%);
+  }
+}
+
+.quantityNumber {
+  font-size: 1.2em;
+}
+

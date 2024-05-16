@@ -1,0 +1,14 @@
+@import '../../index.scss';
+
+.pageBg {
+    background-color: map-get($map:  map-get($colors, "gray"), $key: "300");
+    padding-bottom: calc(8vh + 12px);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    padding-inline: 6vw;
+    padding-top: 10vh;
+    gap: calc(8px + 0.6vw);
+}

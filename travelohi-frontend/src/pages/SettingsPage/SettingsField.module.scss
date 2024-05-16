@@ -1,0 +1,49 @@
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3px + 0.5vh);
+}
+
+.fieldLabel {
+    font-size: medium;
+    font-weight: 600;
+}
+
+.fieldContent {
+    font-size: medium;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: calc(6px + 0.8vw);
+    background-color: white;
+    width: 80%;
+    justify-content: space-between;
+
+
+    &:hover {
+        background-color: darken(white, 5%);
+    }
+}
+
+.profilePictureContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45%; 
+    overflow: hidden; 
+    width: 50px; 
+    height: 50px; 
+    img {
+        width: 100%; 
+        height: auto;
+    }
+}
+
+.leftSide {
+    display: flex;
+    gap: calc(6px + 0.8vw);
+}

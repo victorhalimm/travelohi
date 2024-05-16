@@ -1,0 +1,22 @@
+.container {
+    background-color: #f0f0f0;
+    padding: calc(2vh + 8px) 10vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.totalPricePopUp {
+    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 6px);
+
+    .priceHeader {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .priceValue {
+        font-weight: 600;
+    }
+}

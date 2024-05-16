@@ -1,0 +1,49 @@
+@import '../../index.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6px + 0.5vh);
+    width: 80%;
+    background-color: white;
+    padding: calc(6px + 0.8vw);
+}
+
+.inputContainer {
+    border-radius: 6px;
+    padding: calc(0.6vw + 8px);
+    display: flex;
+    align-items: center;
+    color: map-get($map: map-get($colors, "gray"), $key: "500");
+    gap: calc(0.5vw + 6px);
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 1.2rem;
+    }
+}
+
+.infoFieldContainer {
+    display: flex;
+    width: 100%;
+    gap: 1vw;
+
+    .inputContainer {
+        width: calc(100%/2 - 1vw);
+        padding: calc(0.3vw + 8px);
+        
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: calc(0.1vw + 2px);
+}

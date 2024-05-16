@@ -1,0 +1,50 @@
+@import "../../index.scss"; // Adjust the path as necessary to include global styles
+
+.datePickerContainer {
+  display: flex;
+  gap: 16px; // Adjust the space between the two date inputs as needed
+  align-items: center;
+}
+
+.dateInputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dateLabel {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.dateInput {
+  padding: 10px;
+  border: 1px solid map-get($colors, "gray", "300");
+  border-radius: 8px;
+  cursor: pointer;
+  width: 15vw;
+
+  &:focus {
+    outline: none;
+    border-color: map-get($colors, "blue", "500");
+    box-shadow: 0 0 0 2px map-get($colors, "blue", "500");
+  }
+}
+
+.dateDisplay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 6px 10px;
+  background-color: white;
+  border: 1px solid map-get($colors, "gray", "300");
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  color: map-get($colors, "gray", "700");
+}
+
+

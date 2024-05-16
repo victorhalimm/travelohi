@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 16px;
+    padding: calc(2vw + 10px) calc(1.5vw + 10px);
+    gap: calc(1vh + 8px);
+    width: 100%;
+}
+
+.formContainer {
+    width: 60%;
+}

@@ -1,0 +1,35 @@
+.container {
+    background-color: white;
+    border-radius: 12px;
+    padding: calc(0.4vw + 8px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
+
+
+    .hotelNameContainer {
+        display: flex;
+        gap: 0.3vw;
+        align-items: end;
+
+        .hotelName {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+        .starContainer {
+            color: orange;
+        }
+    }
+
+    .hotelAddress {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .hotelDescription {
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+}

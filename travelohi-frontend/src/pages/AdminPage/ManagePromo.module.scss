@@ -1,0 +1,11 @@
+.imageContainer {
+    position: relative;
+    width: 100%;
+}
+
+.promoGridContainer {
+    display: flex;
+    gap: calc(0.8vw + 8px);
+    width: 100%;
+    flex-wrap: wrap;
+}

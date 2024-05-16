@@ -1,0 +1,245 @@
+basePath: /v2
+definitions:
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+  models.CreditCard:
+    properties:
+      createdAt:
+        type: string
+      cvv:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      expiry_date:
+        type: string
+      id:
+        type: integer
+      number:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.Promo:
+    properties:
+      code:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      discount:
+        type: number
+      expiry_date:
+        type: string
+      id:
+        type: integer
+      image_url:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  models.User:
+    properties:
+      answer:
+        type: string
+      banned:
+        type: boolean
+      credit_card:
+        $ref: '#/definitions/models.CreditCard'
+      credit_card_id:
+        type: string
+      dob:
+        type: string
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: integer
+      last_name:
+        type: string
+      newsletter:
+        type: boolean
+      otp:
+        type: string
+      otp_expiration:
+        type: string
+      password:
+        items:
+          type: integer
+        type: array
+      phone_number:
+        type: string
+      question_id:
+        type: string
+      role:
+        type: string
+    type: object
+host: localhost
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is TraveloHI's API Documentation.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Travelohi API
+  version: "1.0"
+paths:
+  /api/promo/create:
+    post:
+      consumes:
+      - application/json
+      description: Adds a new promo to the system with the provided details.
+      parameters:
+      - description: Promo Creation
+        in: body
+        name: promo
+        required: true
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Promo successfully created
+          schema:
+            $ref: '#/definitions/models.Promo'
+        "400":
+          description: Bad Request - Cannot parse JSON or validation failed
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "409":
+          description: Conflict - A promo with the same code already exists
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error - Could not create promo
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a new promotion
+      tags:
+      - promo
+  /api/user:
+    get:
+      consumes:
+      - application/json
+      description: get user by ID
+      operationId: get-user-by-int
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "409":
+          description: Conflict
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get user by id from cookies
+  /api/user/ban/{id}:
+    patch:
+      consumes:
+      - application/json
+      description: Bans a user by setting their IsBanned status to true
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: 'message: Success'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 'error: Bad Request'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: 'error: User not found'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Internal Server Error'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Ban a user
+      tags:
+      - users
+  /user/{id}/email:
+    put:
+      consumes:
+      - application/json
+      description: Update email of the user by user ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Email Object
+        in: body
+        name: email
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: 'message: Success'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: 'error: Bad Request / Email cannot be empty / Email is the
+            same as previous one'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: 'error: Not Found'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Update user email
+      tags:
+      - user
+swagger: "2.0"

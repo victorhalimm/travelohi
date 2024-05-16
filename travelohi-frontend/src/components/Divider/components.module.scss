@@ -1,0 +1,20 @@
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(187, 187, 187, 0.3);
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+
+  &.withText::before,
+  &.withText::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); 
+    margin: 0 0.5rem;
+  }
+
+  &:not(.withText) {
+    border-bottom: 1px solid rgba(165, 165, 165, 0.273);
+  }
+}

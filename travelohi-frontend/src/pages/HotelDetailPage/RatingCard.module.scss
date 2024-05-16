@@ -1,0 +1,52 @@
+@import '../../index.scss';
+
+.container {
+    background-color: white;
+    border-radius: 12px;
+    padding: calc(0.4vw + 8px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
+}
+
+.header {
+    font-size: 1.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+}
+
+.star {
+    color: orange;
+}
+
+.ratingColumn {
+    display: flex;
+    gap: 0.5vw;
+    flex-wrap: wrap;
+}
+
+
+.good {
+    background-color: map-get(map-get($colors, "green"), "200");
+}
+
+.mid {
+    background-color: map-get(map-get($colors, "orange"), "200");
+}
+
+.bad {
+    background-color: map-get(map-get($colors, "red"), "200");
+}
+
+.ratingRow {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    padding: calc(0.1vw + 4px);
+    font-weight: 500;
+    align-items: center;
+}
+

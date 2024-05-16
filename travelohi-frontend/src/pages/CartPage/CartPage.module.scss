@@ -1,0 +1,13 @@
+.container {
+    padding: calc(5vh + 10px) calc(10vw + 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.cartContainer {
+    display: flex;
+    margin-top: calc(2vh + 10px);
+    flex-direction: column;
+    gap: calc(1vh + 8px);
+    margin-bottom: calc(2vh + 10px);
+}

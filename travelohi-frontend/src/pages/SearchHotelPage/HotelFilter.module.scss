@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 6px);
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 4px);
+    background-color: white;
+    padding: calc(0.3vw + 6px);
+    border-radius: 16px;
+}
+
+.valueContainer {
+    justify-content: space-between;
+    font-weight: 500;
+    display: flex;
+}
+

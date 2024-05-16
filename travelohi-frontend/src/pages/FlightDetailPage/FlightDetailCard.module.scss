@@ -1,0 +1,78 @@
+@import '../../index.scss';
+
+.container {
+    background-color: white;
+    width: 60%;
+    padding: calc(0.7vw + 6px);
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline {
+    width: 1px;
+    height: 100%;
+    background-color: rgb(198, 198, 198);
+}
+
+.detailContainer {
+    display: flex;
+    gap: 1vw;
+    padding: 1vw;
+}
+
+.flightInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    .headerInformation {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+
+        .dateInformation {
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .airportInformation {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: map-get($map: map-get($colors, "gray"), $key: "600");
+        }
+    }
+
+    .airplaneInformation {
+        border-style: solid;
+        padding: 1vw;
+        border-color: map-get($map: map-get($colors, "gray"), $key: "400");
+        border-width: 1px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+
+        .airlineInformation {
+            font-weight: 600;
+            display: flex;
+            font-size: 0.85rem;
+            gap: 0.2vw;
+            font-weight: 600;
+            align-items: center;
+
+            img {
+                width: 2.5vw;
+                height: 2.5vh;
+                object-fit: cover;
+            }
+        }
+
+        .modelInformation {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: map-get($map: map-get($colors, "gray"), $key: "600");
+        }
+    }
+}

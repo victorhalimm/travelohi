@@ -1,0 +1,58 @@
+@import '../../index.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .reviewContent {
+        padding: calc(1.5vh + 8px) calc(0.4vw + 6px);
+        display: flex;
+        width: 100%;
+
+        .leftReview {
+            display: flex;
+            width: 35%;
+            height: 40%;
+            flex-direction: column;
+            gap: 1vh;
+            justify-content: center;
+
+            .reviewRating {
+                color: map-get($map: map-get($colors, "blue"), $key: "400");
+                font-size: 1.7rem;
+            }
+
+            .reviewerName {
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        } 
+
+        .rightReview {
+            display: flex;
+            width: 60%;
+            flex-direction: column;
+
+            .rightReviewContent {
+                background-color: white;
+                padding: calc(1.5vh + 8px) calc(0.4vw + 6px);
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+
+                .reviewComment {
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+
+                .reviewDate {
+                    font-weight: 400;
+                    font-size: 0.7rem;
+                    color: rgba(black, 0.5);
+                }
+            }
+        }
+
+    }
+}

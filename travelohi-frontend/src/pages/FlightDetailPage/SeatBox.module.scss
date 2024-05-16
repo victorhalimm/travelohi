@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: map-get($map: map-get($colors, "gray"), $key: "300");
+}
+
+.businessClass {
+    background-color: map-get($map: map-get($colors, "orange"), $key: "200");
+}
+
+.selected {
+    background-color: map-get($map: map-get($colors, "blue"), $key: "400");
+}
+
+.occupied {
+    color: white;
+    background-color: black;
+}

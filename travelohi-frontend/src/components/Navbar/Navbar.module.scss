@@ -1,0 +1,101 @@
+@import '../../index.scss';
+
+.navbarContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    font-weight: 500;
+    top: 0;
+    left: 0;
+    margin: auto;
+    padding-block: calc(2vh + 4px);
+    align-items: center;
+
+    img {
+        object-fit: cover;
+        max-height: 40px;
+        width: auto;
+    }
+}
+
+
+nav{
+    width: 100vw;
+    height: fit-content;
+    padding-inline: calc(2vw + 32px);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.377);
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    z-index: 100;
+    background-color: white;
+}
+
+.navbarLinks {
+    display: flex;
+    align-items: center;
+    gap: calc(8px + 0.8vw);
+}
+
+.registerBtn {
+    border: 2px solid map-get(map-get($colors, "blue"), "500"); 
+    color: map-get(map-get($colors, "blue"), "500"); 
+    background-color: transparent;
+    padding: 0.5rem 1rem; 
+    border-radius: 0.25rem; 
+    transition: background-color 0.3s ease; 
+  
+    &:hover {
+      background-color: map-get(map-get($colors, "blue"), "500"); 
+      color: map-get($colors, "white"); 
+    }
+}
+
+.loginBtn {
+    color: map-get(map-get($colors, "blue"), "500"); 
+    background-color: transparent; 
+    padding: 0.5rem 1rem; 
+    transition: background-color 0.3s ease;
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: map-get(map-get($colors, "blue"), "500"); 
+      color: map-get($colors, "white"); 
+    }
+}
+
+.navPhysical {
+    height: var(--navbar-height);
+}
+
+.profileContainer {
+    position: relative;
+    cursor: pointer;
+}
+
+.floatingMenu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    padding: calc(4px + 0.7vh) calc(4px + 0.3vw);
+}
+
+.menuItem {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: left;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }

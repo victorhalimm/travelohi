@@ -1,0 +1,31 @@
+.ratingAndFacilities {
+    display: flex;
+}
+
+.ratingContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.hotelContainer {
+    width: 73%;
+}
+
+.roomContainer {
+    width: 43%;
+    gap: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: calc(1vw + 10px);
+}
+
+.facilityList {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 4px);
+}

@@ -1,0 +1,29 @@
+@import '../../index.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.checkboxContainer input[type="checkbox"] {
+    transform: scale(1.5); 
+    cursor: pointer;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 8px);
+    width: 5%;
+
+    .expired {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background-color: map-get($map: map-get($colors, "red"), $key: "300");
+        padding: calc(0.3vw + 8px);
+        font-weight: 600;
+    }
+}

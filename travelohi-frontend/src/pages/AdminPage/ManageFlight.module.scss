@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2vh + 10px);
+    width: 100%;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 16px;
+    padding: calc(2vw + 10px) calc(1.5vw + 10px);
+    gap: calc(1vh + 8px);
+}
+
+.locationFieldContainer {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    gap: calc(1vw + 10px);
+
+    .selectorField{
+        width: 40%;
+    }
+}
+
+.rowContainer {
+    padding-block: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.flightCardContainer {
+    width: 100%;
+}
+
+.priceField {
+    width: 20%;
+}

@@ -1,0 +1,19 @@
+.selectorField{
+    width: 100%;
+}
+
+.selector {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border-color: #007bff; 
+    }
+}

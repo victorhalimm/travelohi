@@ -1,0 +1,519 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  font-family: "Open Sans", sans-serif, Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.bg-primary-weak {
+  background-color: var(--primary-weak);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+$spacings: (
+  1rem: 1rem,
+  2rem: 2rem,
+  3rem: 3rem,
+  5: 5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+);
+
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.display {
+  &-none {
+    display: none;
+  }
+
+  &-block {
+    display: block;
+  }
+}
+
+@each $spacing, $value in $spacings {
+  .m-#{$spacing} {
+    margin: $value;
+  }
+
+  .minline-#{$spacing} {
+    margin-inline: $value;
+  }
+
+  .mblock-#{$spacing} {
+    margin-block: $value;
+  }
+
+  .ml-#{$spacing} {
+    margin-left: $value;
+  }
+
+  .mr-#{$spacing} {
+    margin-right: $value;
+  }
+
+  .mt-#{$spacing} {
+    margin-top: $value;
+  }
+
+  .mb-#{$spacing} {
+    margin-bottom: $value;
+  }
+
+  .p-#{$spacing} {
+    padding: $value;
+  }
+
+  .pinline-#{$spacing} {
+    padding-inline: $value;
+  }
+
+  .pblock-#{$spacing} {
+    padding-block: $value;
+  }
+
+  .pl-#{$spacing} {
+    padding-left: $value;
+  }
+
+  .pr-#{$spacing} {
+    padding-right: $value;
+  }
+
+  .pt-#{$spacing} {
+    padding-top: $value;
+  }
+
+  .pb-#{$spacing} {
+    padding-bottom: $value;
+  }
+
+  .w-#{$spacing} {
+    width: $value;
+  }
+
+  .h-#{$spacing} {
+    height: $value;
+  }
+
+  .rounded-#{$spacing} {
+    border-radius: $value;
+  }
+
+  .gap-#{$spacing} {
+    gap: $value;
+  }
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+.border-none {
+  border: 0;
+}
+
+$text-sizes: (
+  normal: 1rem,
+  sm: 0.8rem,
+  xs: 0.6rem,
+  lg: 1.25rem,
+  xl: 1.5rem,
+  double: 2rem,
+);
+
+@each $size, $value in $text-sizes {
+  .text-#{$size} {
+    font-size: $value;
+  }
+}
+
+$ratio-and-percentages: (
+  "1of2": 50%,
+  "1of3": 33.33%,
+  "2of3": 66.66%,
+  "1of4": 25%,
+  "1of8": 12.5%,
+  "3of4": 75%,
+);
+
+@each $ratio, $percent in $ratio-and-percentages {
+  .w-#{$ratio} {
+    width: $percent;
+  }
+
+  .h-#{$ratio} {
+    height: $percent;
+  }
+}
+
+$ratio-and-ratio: (
+  "1of1": calc(1 / 1),
+  "1of2": calc(1 / 2),
+  "1of3": calc(1 / 3),
+  "2of3": calc(2 / 3),
+  "1of4": calc(1 / 4),
+  "1of8": calc(1 / 8),
+  "3of4": calc(3 / 4),
+);
+
+@each $ratio, $percent in $ratio-and-ratio {
+  .aspect-#{$ratio} {
+    aspect-ratio: $percent;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.justify {
+  &-center {
+    justify-content: center;
+  }
+
+  &-around {
+    justify-content: space-around;
+  }
+
+  &-between {
+    justify-content: space-between;
+  }
+
+  &-evenly {
+    justify-content: space-evenly;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+}
+
+.content-padding {
+  padding: calc(15px + 3%);
+}
+
+.items {
+  &-center {
+    align-items: center;
+  }
+
+  &-start {
+    align-items: flex-start;
+  }
+
+  &-end {
+    align-items: flex-end;
+  }
+
+  &-stretch {
+    align-items: stretch;
+  }
+}
+
+.w-vfull {
+  width: 100vw;
+}
+
+.h-vfull {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-grow {
+    flex-grow: 1;
+  }
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+$colors: (
+  "white": #ffffff,
+  "black": #000000,
+  "gray": (
+    "100": #f7fafc,
+    "200": #edf2f7,
+    "300": #e2e8f0,
+    "400": #cbd5e0,
+    "500": #a0aec0,
+    "600": #718096,
+    // Darker than "500"
+    "700": #4a5568,
+    // Darker than "600"
+    "800": #2d3748,
+    // Darker than "700"
+    "900": #1a202c,
+    // Darkest shade
+  ),
+  "red": (
+    "100": #fff5f5,
+    "200": #fed7d7,
+    "300": #feb2b2,
+    "400": #fd8181,
+    "500": #fd4f4f,
+    "600": #fc2d2d,
+  ),
+  "blue": (
+    "100": #ebf8ff,
+    "200": #bee3f8,
+    "300": #90cdf4,
+    "400": #5db6ef,
+    "500": #2ea1ea,
+  ),
+  "green": (
+    "100": #f0fff4,
+    "200": #c6f6d5,
+    "300": #9ae6b4,
+    "400": #68d391,
+    "500": #48bb78,
+    "600": #38a169,
+    "700": #2f855a,
+  ),
+  "orange": (
+    "100": #fffaf0,
+    "200": #feebc8,
+    "300": #fbd38d,
+    "400": #f6ad55,
+    "500": #ed8936,
+    "600": #dd6b20,
+    "700": #c05621,
+    "800": #9c4221,
+    "900": #7b341e,
+  ),
+  "purple": (
+    "100": #faf5ff,
+    "200": #e9d8fd,
+    "300": #d6bcfa,
+    "400": #b794f4,
+    "500": #9f7aea,
+    "600": #805ad5,
+    "700": #6b46c1,
+    "800": #553c9a,
+    "900": #44337a,
+  ),
+);
+
+@mixin bg-color($color-name, $color-value) {
+  .bg-#{$color-name} {
+    background-color: $color-value;
+  }
+}
+
+@each $color-name, $color-values in $colors {
+  @if type-of($color-values) == "map" {
+    @each $shade, $shade-value in $color-values {
+      @include bg-color($color-name + "-" + $shade, $shade-value);
+    }
+  } @else {
+    @include bg-color($color-name, $color-values);
+  }
+}
+
+@mixin text-color($color-name, $color-value) {
+  .text-#{$color-name} {
+    color: $color-value;
+  }
+}
+
+@each $color-name, $color-values in $colors {
+  @if type-of($color-values) == "map" {
+    @each $shade, $shade-value in $color-values {
+      @include text-color($color-name + "-" + $shade, $shade-value);
+    }
+  } @else {
+    @include text-color($color-name, $color-values);
+  }
+}
+
+$zIndices: (
+  "0": 0,
+  "10": 10,
+  "20": 20,
+  "30": 30,
+  "40": 40,
+  "50": 50,
+  "60": 60,
+  "70": 70,
+  "80": 80,
+  "90": 90,
+  "100": 100,
+);
+
+@each $name, $value in $zIndices {
+  .z-#{$name} {
+    z-index: $value;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+
+  img {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 5;
+    }
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+$weights: (
+  "100": 100,
+  "200": 200,
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700,
+  "800": 800,
+);
+
+@each $weight-key, $weight-value in $weights {
+  .font-weight-#{$weight-key} {
+    font-weight: $weight-value;
+  }
+}
+
+.thin-border {
+  border: 1px solid #cccccc;
+  &:focus {
+    border-color: #b0acac;
+  }
+}
+
+.clear-style {
+  text-decoration: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.button-blue {
+  background-color: map-get(map-get($colors, "blue"), "500");
+  color: white;
+  &:hover {
+    background-color: map-get(map-get($colors, "blue"), "400");
+  }
+  border: 0px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+@mixin button-color($color-name) {
+  .button-#{$color-name} {
+    background-color: map-get(map-get($colors, $color-name), "500");
+    color: white;
+    border: 0px;
+
+    &:hover {
+      background-color: map-get(map-get($colors, $color-name), "400");
+    }
+  }
+}
+
+@each $color-name, $color-values in $colors {
+  @if type-of($color-values) == "map" {
+    @include button-color($color-name);
+  }
+}
+
+:root {
+  --navbar-height: 0px;
+}
+
+.main-content {
+  margin-top: var(--navbar-height);
+}
+
+.nav-link {
+  &:hover {
+    color: map-get(map-get($colors, "blue"), "500");
+  }
+
+  cursor: pointer;
+}

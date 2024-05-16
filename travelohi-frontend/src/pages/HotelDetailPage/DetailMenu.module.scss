@@ -1,0 +1,21 @@
+@import '../../index.scss';
+
+.container {
+    display: flex;
+    border-radius: 12px;
+    background-color: white;
+    padding: calc(0.2vw + 6px);
+    width: 100%;
+}
+
+
+.menuItem {
+    padding: calc(0.2vh + 4px) calc(0.2vw + 8px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: ease-in 0.1s;
+
+    &:hover {
+        color: map-get(map-get($colors, "blue"), "300");
+    }
+}

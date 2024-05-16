@@ -1,0 +1,50 @@
+package routes
+
+import (
+	"travelohi-backend/controllers"
+
+	"github.com/gofiber/fiber/v2"
+)
+
+func Setup(app *fiber.App) {
+	app.Get("/", controllers.Hello)
+	app.Post("/api/register", controllers.Register)
+	app.Post("/api/login", controllers.Login)
+	app.Get("/api/user", controllers.User)
+	app.Post("/api/logout", controllers.Logout)
+	app.Post("/api/login/otp", controllers.LoginOTP)
+	app.Post("/api/login/sendotp", controllers.SendOTP)
+	app.Post("/api/forgot/question", controllers.ForgotPasswordQuestion)
+	app.Post("/api/forgot/confirm", controllers.ForgotPasswordConfirm)
+	app.Post("/api/forgot/change", controllers.ChangePassword)
+	app.Get("/api/places/all", controllers.GetCountriesAndCities)
+	app.Patch("/api/user/:id/name", controllers.UpdateUserName)
+	app.Patch("/api/user/:id/email", controllers.UpdateEmail)
+	app.Patch("/api/user/:id/phone", controllers.UpdatePhone)
+	app.Post("/api/promo/create", controllers.CreatePromo)
+	app.Get("/api/promo/get", controllers.GetAllPromos)
+	app.Patch("/api/promo/update/:id", controllers.UpdatePromo)
+	app.Get("/api/city/get", controllers.GetCity)
+	app.Post("/api/hotel/create", controllers.CreateHotel)
+	app.Get("/api/user/get", controllers.GetAllUser)
+	app.Patch("/api/user/ban/:id", controllers.BanUser)
+	app.Patch("/api/user/unban/:id", controllers.UnbanUser)
+	app.Patch("/api/user/newsletter/enable/:id", controllers.EnableNewsletter)
+	app.Patch("/api/user/newsletter/disable/:id", controllers.DisableNewsletter)
+	app.Get("/api/hotel/search", controllers.SearchHotel)
+	app.Get("/api/hotel/category/:id", controllers.GetRoomCategory)
+	app.Get("/api/hotel/:id", controllers.GetHotelById)
+	app.Post("/api/user/send-newsletter", controllers.SendNewsletter)
+	app.Get("/api/airline/get", controllers.GetAllAirlines)
+	app.Get("/api/airplane/get", controllers.GetAllAirplanes)
+	app.Post("/api/flight/create", controllers.CreateFlight)
+	app.Get("/api/airline/get/:id", controllers.GetAirlineByID)
+	app.Get("/api/airport/get/:id", controllers.GetAirportByID)
+	app.Get("/api/flight/:id", controllers.GetFlightByID)
+	app.Post("/api/cart/hotel/create", controllers.InsertHotelCart)
+	app.Post("/api/cart/flight/create", controllers.InsertFlightCart)
+	app.Post("/api/user/add/creditcard", controllers.AddCreditCardToUser)
+	app.Get("/api/cart/flight/user/:id", controllers.GetFlightCartByUser)
+	app.Get("/api/cart/hotel/user/:id", controllers.GetHotelCartByUser)
+	app.Post("/api/hotel/country", controllers.GetHotelsByCountry)
+}

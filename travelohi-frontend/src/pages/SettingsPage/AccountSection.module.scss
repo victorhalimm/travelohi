@@ -1,0 +1,12 @@
+.background {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    gap: calc(8px + 0.8vh);
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6px + 0.5vh);
+}

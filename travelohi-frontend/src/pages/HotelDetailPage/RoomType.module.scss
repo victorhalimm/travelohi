@@ -1,0 +1,120 @@
+@import '../../index.scss';
+
+.container {
+    width: 98%;
+    background-color: map-get($map: map-get($colors, "gray"), $key: "200");
+    border-radius: 10px;
+    padding: calc(0.3vw + 8px);
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vh + 6px);
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    gap: calc(0.7vw + 8px);
+}
+
+.typeHeader {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.typeContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.typeContainer {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding: calc(0.2vw + 8px);
+    border-radius: 12px;
+}
+
+.imagesPlaceholder {
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    gap: 0.3%;
+}
+
+.mainImage {
+    width: 100%;
+    height: 75%;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.otherImages {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    gap: 0.4%;
+}
+
+.otherImage {
+    width: 33%;
+    height: auto;
+}
+
+.facilities {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    font-size: 0.8rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    max-height: 45%;
+}
+
+.facility {
+    display: flex;
+    gap: 0.3vw;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.priceSection {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1vh;
+
+    .modifiedPrice {
+        font-size: 1.2rem;
+        color: map-get(map-get($colors, "gray"), "500");
+        text-decoration: line-through;
+    }
+
+    .price {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: map-get(map-get($colors, "orange"), "500");
+    }
+}
+
+.separator {
+    width: 1px;
+    background-color: #e1dede; 
+    margin: 0 20px;
+    align-self: stretch; 
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 0.5vw;
+}
+
